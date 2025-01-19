@@ -49,25 +49,24 @@ a:focus::after {
 	transform: translate3d(0, 0, 0);
 }
 
-header > span,
-header > a {
+header a {
 	font-weight: 700;
 	text-transform: uppercase;
 }
 
-.section-one {
+.pop-it {
 	padding: 2rem var(--main-side-padding) 6rem;
 	background: url('./images/background2.png') no-repeat center center;
 	background-size: cover;
 }
 
-.section-one h1.title {
+.pop-it h1.title {
 	font-size: 7rem;
 	font-weight: 900;
 	margin-bottom: 0;
 }
 
-.section-one h3.sub-title {
+.pop-it h3.sub-title {
 	width: 25rem;
 	margin-bottom: 4rem;
 }
@@ -86,7 +85,17 @@ button.large {
 	cursor: pointer;
 }
 
-.section-two {
+button.small {
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: orange;
+	padding: 1rem 2rem;
+	min-width: 8rem;
+	border: none;
+	cursor: pointer;
+}
+
+.what-is-pop-it {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -95,21 +104,129 @@ button.large {
 	padding: 4rem calc(2 * var(--main-side-padding));
 }
 
-.section-two > .title {
+.what-is-pop-it .title,
+.choose-your-pop-it .title,
+.rules-of-the-game .title {
 	font-size: 1.5rem;
 	font-weight: 900;
 }
 
-.section-two > .description {
+.what-is-pop-it .description {
 	text-align: center;
 	text-wrap: pretty;
 }
 
-.section-three {
+.choose-your-pop-it {
 	padding: 4rem calc(2 * var(--main-side-padding));
 	background: greenyellow;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.section-three > .title {
-	
+.choose-your-pop-it #carousel {
+	display: flex;
+	gap: 8rem;
+	align-items: center;
+	width: 100%;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.choose-your-pop-it #carousel::-webkit-scrollbar {
+	display: none;
+}
+
+.choose-your-pop-it .carousel-container {
+	position: relative;
+	width: 100%;
+}
+
+.choose-your-pop-it .carousel-container button#arrow-left,
+.choose-your-pop-it .carousel-container button#arrow-right {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	padding: 1rem;
+	cursor: pointer;
+	width: 3rem;
+	height: 3rem;
+	font-weight: 900;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+.choose-your-pop-it .carousel-container button#arrow-left {
+	left: -4rem;
+}
+
+.choose-your-pop-it .carousel-container button#arrow-right {
+	right: -4rem;
+}
+
+.choose-your-pop-it #carousel .carousel-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	scroll-snap-align: start;
+}
+
+.choose-your-pop-it #carousel .carousel-item img {
+	object-fit: cover;
+	width: 10rem;
+	height: 10rem;
+}
+
+.rules-of-the-game {
+	position: relative;
+	padding: 4rem var(--main-side-padding);
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 4rem;
+}
+
+.rules-of-the-game .text {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+}
+
+.rules-of-the-game img {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+
+.rules-of-the-game .bg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(12deg);
+	background-color: orange;
+	width: 60%;
+	height: 60%;
+	border-radius: 50%;
+	z-index: -1;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(53, 53, 53);
+	color: white;
+	padding: 2rem var(--main-side-padding);
+	flex-wrap: wrap;
+	gap: 1rem;
 }
